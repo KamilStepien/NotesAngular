@@ -1,0 +1,5 @@
+
+    <app-note-list-element (deleteNoteEvent)= "deleteNote($event)" (chceckedEvent)="setChceked($event)" *ngFor="let item of noteService.notesTab"  [noteInput]= "item"></app-note-list-element>
+
+    
+

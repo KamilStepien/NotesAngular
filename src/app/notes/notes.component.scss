@@ -1,0 +1,40 @@
+:host
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+
+    app-note-add, app-notes-list
+    {
+        padding: 10px;
+        width: 100%;
+    }
+
+ 
+}
+
+
+@media screen and (min-width: 1000px)
+{
+    :host
+    {
+      
+        flex-direction: row;
+        align-items: flex-start;
+        app-note-add
+        {
+            
+            width: 30%;
+           
+        }
+        app-notes-list
+        {
+            width: 70%;
+           
+        }
+    }
+  
+
+
+}

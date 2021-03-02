@@ -1,0 +1,10 @@
+
+<div class= "note_box_element" >
+<mat-checkbox 
+class="checkbox"
+[checked] = "noteInput.checked"
+(change)="setChecked()">
+</mat-checkbox>
+<p (click)="deleteNote()" [ngClass]="{chcekboxChecked: !noteInput.checked}">{{noteInput.name}}</p>
+
+</div>
