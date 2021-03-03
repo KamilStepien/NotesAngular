@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { NoteModel } from './models/note.model';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { NoteModel } from './models/note.model';
 export class NoteService {
 
   public notesTab: Array<NoteModel> = [new NoteModel(1,"kamil", true),new NoteModel(2,"kamil111", false)];
-  private lastId = this.notesTab[this.notesTab.length -1 ].id
+  private lastId = 2;
   constructor() { }
 
   setChecked(id:number,checked:boolean):void

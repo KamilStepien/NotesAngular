@@ -1,5 +1,6 @@
 
-    <app-note-list-element (deleteNoteEvent)= "deleteNote($event)" (chceckedEvent)="setChceked($event)" *ngFor="let item of noteService.notesTab"  [noteInput]= "item"></app-note-list-element>
-
-    
-
+<div cdkDropList  (cdkDropListDropped)="drop($event)">
+    <div  *ngFor="let item of noteService.notesTab"  cdkDrag>
+        <app-note-list-element   (deleteNoteEvent)= "deleteNote($event)" (chceckedEvent)="setChceked($event)" [noteInput]= "item" ></app-note-list-element>
+    </div>
+  </div>

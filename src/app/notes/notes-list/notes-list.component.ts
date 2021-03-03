@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteNoteDialogComponent } from 'src/app/shared/dialogs/delete-note-dialog/delete-note-dialog.component';
@@ -24,4 +25,10 @@ export class NotesListComponent {
     this.dialog.open(DeleteNoteDialogComponent, {  data:{note:note} })
     
   }
+
+  drop(event: CdkDragDrop<NoteModel[]>) {
+    console.log("aaa")
+    moveItemInArray(this.noteService.notesTab, event.previousIndex, event.currentIndex);
+  }
+  
 }

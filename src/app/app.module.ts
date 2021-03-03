@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteNoteDialogComponent } from './shared/dialogs/delete-note-dialog/delete-note-dialog.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DeleteNoteDialogComponent } from './shared/dialogs/delete-note-dialog/d
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    DragDropModule
   ],
   providers: [NoteService],
   bootstrap: [AppComponent]
