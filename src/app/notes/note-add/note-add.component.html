@@ -1,12 +1,10 @@
-
+<div class="box-note-opartaion">
 <form  [formGroup]="noteForm" (ngSubmit)="onSubmit()">
       <mat-form-field >
         <mat-label>Dodaj do listy</mat-label>
         <input matInput placeholder="Co masz zrobić? "  formControlName="name">
-      </mat-form-field>
-      
-        <button  mat-raised-button color="primary" [disabled] = "!noteForm.valid">Dodaj</button>
-   
-      
+      </mat-form-field>   
+      <button  mat-raised-button color="primary" [disabled] = "!noteForm.valid">Dodaj</button>  
 </form >
-
+<button  mat-raised-button color="primary" [disabled]="!noteService.IsAnyChecked()" (click)="deleteChecked()" >Usuń zaznaczone</button>
+</div>

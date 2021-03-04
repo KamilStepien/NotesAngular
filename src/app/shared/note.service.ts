@@ -9,6 +9,8 @@ export class NoteService {
 
   public notesTab: Array<NoteModel> = [new NoteModel(1,"kamil", true),new NoteModel(2,"kamil111", false)];
   private lastId = 2;
+
+  
   constructor() { }
 
   setChecked(id:number,checked:boolean):void
@@ -28,4 +30,18 @@ export class NoteService {
     this.notesTab = this.notesTab.filter(item => item !== note);
   }
 
+  deleteAllChecked():void
+  {
+    this.notesTab = this.notesTab.filter(item => item.checked != true);
+  }
+
+  public IsAnyChecked():boolean 
+  {
+    for(let i = 0; i < this.notesTab.length -1; i++)
+    {
+      if(this.notesTab[i].checked === true)
+      return true;
+    }
+    return false;
+  }
 }

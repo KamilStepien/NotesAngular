@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ValueSansProvider } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NoteService } from 'src/app/shared/note.service';
 
@@ -7,19 +7,22 @@ import { NoteService } from 'src/app/shared/note.service';
   templateUrl: './note-add.component.html',
   styleUrls: ['./note-add.component.scss']
 })
-export class NoteAddComponent implements OnInit {
+export class NoteAddComponent   {
 
-  constructor(private noteService:NoteService) { }
+  constructor(public noteService:NoteService) { }
 
   noteForm = new FormGroup({
     name:new FormControl('', [Validators.required])
   });
 
-  onSubmit()
+  onSubmit():void
   {
     this.noteService.addNote(this.noteForm.value.name)
   }
-  ngOnInit(): void {
+  
+  deleteChecked():void
+  {
+    this.noteService.deleteAllChecked();
   }
 
 }
